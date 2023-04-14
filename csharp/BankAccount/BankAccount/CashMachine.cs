@@ -2,7 +2,7 @@ namespace RobotCleaner1;
 
 public class CashMachine
 {
-    public BranchFinder BranchFinder { get; set; }
+    public BranchFinder BranchFinder { get; }
 
     public bool Withdraw(string town, string customerName, decimal cashAmount)
     {

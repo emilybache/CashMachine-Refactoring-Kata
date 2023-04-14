@@ -2,8 +2,9 @@ namespace RobotCleaner1;
 
 public class BranchFinder
 {
-    public Branch FindBranchForTown(string customerName)
+    public Branch FindBranchForTown(string town)
     {
-        return new Branch();
+        // in a real system it would look in a database for this information
+        return new Branch(town);
     }
 }

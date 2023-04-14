@@ -2,12 +2,22 @@ namespace RobotCleaner1;
 
 public class PersonalAccountsManager
 {
-    private List<BankAccount> Accounts { get; }
+    private List<BankAccount> Accounts { get; } = new List<BankAccount>();
+
+    public PersonalAccountsManager()
+    {
+        // in a real system it would load bank accounts from a database
+        Accounts.Add(new BankAccount("Fred", 800m));
+    }
 
     public BankAccount GetAccountForCustomer(string customerName)
     {
-        var accountForCustomer = new BankAccount();
-        accountForCustomer.AccountBalance = 800;
-        return accountForCustomer;
+        var account = Accounts.Find(a => a.AccountHolder == customerName);
+        if (account == null)
+        {
+            throw new ArgumentException("unknown customer " + customerName);
+        }
+
+        return account;
     }
 }
