@@ -1,13 +1,16 @@
-namespace RobotCleaner1;
+namespace Banking;
 
 public class Branch
 {
+    public string Name { get; }
+
+    public string BranchManager { get; }
+
     public Branch(string name)
     {
         Name = name;
+        BranchManager = "Mr Gringotts Goblin";
     }
-
-    public string Name { get; }
 
     public PersonalAccountsManager PersonalAccounts { get; } = new PersonalAccountsManager();
 }
