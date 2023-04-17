@@ -6,11 +6,7 @@ public class CashMachine
 
     public bool Withdraw(string town, string customerName, decimal cashAmount)
     {
-        return BranchFinder
-            .FindBranchForTown(town)
-            .PersonalAccounts
-            .GetAccountForCustomer(customerName)
-            .Withdraw(cashAmount);
+        return BranchFinder.Withdraw(town, customerName, cashAmount);
     }
 }
 

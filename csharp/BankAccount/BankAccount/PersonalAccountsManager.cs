@@ -10,7 +10,7 @@ public class PersonalAccountsManager
         Accounts.Add(new BankAccount("Arthur", 800m));
     }
 
-    public BankAccount GetAccountForCustomer(string customerName /*, string bankManager */)
+    public BankAccount GetAccountForCustomer(string customerName /*, string branchManager */)
     {
         var account = Accounts.Find(a => a.AccountHolder == customerName);
         if (account == null)
@@ -19,5 +19,11 @@ public class PersonalAccountsManager
         }
 
         return account;
+    }
+
+    public bool Withdraw(string customerName, decimal cashAmount)
+    {
+        var bankAccount = GetAccountForCustomer(customerName);
+        return bankAccount.Withdraw(cashAmount);
     }
 }
