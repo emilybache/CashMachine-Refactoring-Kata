@@ -13,13 +13,11 @@ class PersonalAccountsManager {
     }
 
     boolean withdraw(String customerName, BigDecimal cashAmount) {
-        return getAccountForCustomer(customerName).withdraw(cashAmount);
-    }
-
-    public BankAccount getAccountForCustomer(String customerName /*, string bankManager */) {
+        // new feature to start lookup by String bankManager too, but how? We're past branch now?
         return accounts.stream()
                 .filter(a -> a.getAccountHolder().equals(customerName))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("unknown customer " + customerName));
+                .orElseThrow(() -> new IllegalArgumentException("unknown customer " + customerName))
+                .withdraw(cashAmount);
     }
 }
