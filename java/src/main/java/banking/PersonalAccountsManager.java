@@ -12,6 +12,10 @@ class PersonalAccountsManager {
         accounts.add(new BankAccount("Arthur", BigDecimal.valueOf(800L)));
     }
 
+    boolean withdraw(String customerName, BigDecimal cashAmount) {
+        return getAccountForCustomer(customerName).withdraw(cashAmount);
+    }
+
     public BankAccount getAccountForCustomer(String customerName /*, string bankManager */) {
         return accounts.stream()
                 .filter(a -> a.getAccountHolder().equals(customerName))
