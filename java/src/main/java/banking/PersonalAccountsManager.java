@@ -7,9 +7,9 @@ import java.util.List;
 class PersonalAccountsManager {
     private final List<BankAccount> accounts;
 
-    public PersonalAccountsManager() {
+    public PersonalAccountsManager(ArrayList<BankAccount> accounts1) {
         // in a real system it would load bank accounts from a database
-        accounts = new ArrayList<>();
+        accounts = accounts1;
         accounts.add(new BankAccount("Arthur", BigDecimal.valueOf(800L)));
     }
 
