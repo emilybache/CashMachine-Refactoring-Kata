@@ -11,7 +11,11 @@ public final class BankAccounts {
         accounts.add(new BankAccount("Arthur", BigDecimal.valueOf(800)));
     }
 
-    public List<BankAccount> accounts() {
-        return accounts;
+    boolean withdraw(String customerName, BigDecimal cashAmount) {
+        return accounts.stream()
+                .filter(a -> a.belongsTo(customerName))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("unknown customer " + customerName))
+                .withdraw(cashAmount);
     }
 }
