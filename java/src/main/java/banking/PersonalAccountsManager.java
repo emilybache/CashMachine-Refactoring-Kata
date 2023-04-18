@@ -12,6 +12,10 @@ class PersonalAccountsManager {
 
     boolean withdraw(String customerName, BigDecimal cashAmount) {
         // new feature to start lookup by String bankManager too, but how? We're past branch now?
+        return wwithdraw(bankAccounts, customerName, cashAmount);
+    }
+
+    private static boolean wwithdraw(BankAccounts bankAccounts, String customerName, BigDecimal cashAmount) {
         return bankAccounts.accounts().stream()
                 .filter(a -> a.belongsTo(customerName))
                 .findFirst()
