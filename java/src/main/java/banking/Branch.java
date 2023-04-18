@@ -12,9 +12,8 @@ class Branch {
         this.branchManager = "Mr Gringotts Goblin";
     }
 
-    boolean extracted(String customerName, BigDecimal cashAmount) {
-        var accountForCustomer = this.personalAccounts.getAccountForCustomer(customerName);
-        return accountForCustomer.withdraw(cashAmount);
+    boolean withdraw(String customerName, BigDecimal cashAmount) {
+        return this.personalAccounts.getAccountForCustomer(customerName).withdraw(cashAmount);
     }
 
     public String getName() {

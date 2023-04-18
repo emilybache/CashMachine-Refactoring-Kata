@@ -7,7 +7,7 @@ class CashMachine {
 
     public boolean withdraw(String town, String customerName, BigDecimal cashAmount) {
         var branch = branchFinder.findBranchForTown(town);
-        return branch.extracted(customerName, cashAmount);
+        return branch.withdraw(customerName, cashAmount);
     }
 
 }
