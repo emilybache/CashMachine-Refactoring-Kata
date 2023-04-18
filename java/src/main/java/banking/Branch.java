@@ -13,8 +13,7 @@ class Branch {
     }
 
     boolean extracted(String customerName, BigDecimal cashAmount) {
-        var personalAccounts = getPersonalAccounts();
-        var accountForCustomer = personalAccounts.getAccountForCustomer(customerName);
+        var accountForCustomer = this.personalAccounts.getAccountForCustomer(customerName);
         return accountForCustomer.withdraw(cashAmount);
     }
 
@@ -26,7 +25,4 @@ class Branch {
         return branchManager;
     }
 
-    public PersonalAccountsManager getPersonalAccounts() {
-        return personalAccounts;
-    }
 }
