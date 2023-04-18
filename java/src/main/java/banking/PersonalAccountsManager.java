@@ -1,21 +1,18 @@
 package banking;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 class PersonalAccountsManager {
-    private final List<BankAccount> accounts;
+    private final BankAccounts bankAccounts;
 
-    public PersonalAccountsManager(ArrayList<BankAccount> accounts1) {
+    public PersonalAccountsManager(BankAccounts bankAccounts) {
         // in a real system it would load bank accounts from a database
-        accounts = accounts1;
-        accounts.add(new BankAccount("Arthur", BigDecimal.valueOf(800L)));
+        this.bankAccounts = bankAccounts;
     }
 
     boolean withdraw(String customerName, BigDecimal cashAmount) {
         // new feature to start lookup by String bankManager too, but how? We're past branch now?
-        return accounts.stream()
+        return bankAccounts.accounts().stream()
                 .filter(a -> a.belongsTo(customerName))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("unknown customer " + customerName))

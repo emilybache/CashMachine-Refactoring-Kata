@@ -11,7 +11,7 @@ class Branch {
     public Branch(String name) {
         this.name = name;
         this.branchManager = "Mr Gringotts Goblin";
-        this.personalAccounts = new PersonalAccountsManager(new ArrayList<BankAccount>());
+        this.personalAccounts = new PersonalAccountsManager(new BankAccounts(new ArrayList<BankAccount>()));
     }
 
     boolean withdraw(String customerName, BigDecimal cashAmount) {
