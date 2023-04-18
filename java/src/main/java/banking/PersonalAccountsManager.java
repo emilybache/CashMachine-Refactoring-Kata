@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 class PersonalAccountsManager {
-    private final List<BankAccount> accounts = new ArrayList<>();
+    private final List<BankAccount> accounts;
 
     public PersonalAccountsManager() {
         // in a real system it would load bank accounts from a database
+        accounts = new ArrayList<>();
         accounts.add(new BankAccount("Arthur", BigDecimal.valueOf(800L)));
     }
 
