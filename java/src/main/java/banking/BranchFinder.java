@@ -8,6 +8,7 @@ class BranchFinder {
         return findBranchForTown(town).withdraw(customerName, cashAmount);
     }
 
+    // the logic in this method would now change due to the new feature? find branch by town&manager, or else throw?
     private Branch findBranchForTown(String town) {
         // in a real system it would look in a database for this information
         return new Branch(town);

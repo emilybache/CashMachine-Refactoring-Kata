@@ -11,7 +11,6 @@ class PersonalAccountsManager {
     }
 
     boolean withdraw(String customerName, BigDecimal cashAmount) {
-        // new feature to start lookup by String bankManager too, but how? We're past branch now?
         return bankAccounts.withdraw(customerName, cashAmount);
     }
 
