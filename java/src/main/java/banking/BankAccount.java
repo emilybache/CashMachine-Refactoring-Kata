@@ -4,11 +4,15 @@ import java.math.BigDecimal;
 
 class BankAccount {
     private BigDecimal accountBalance;
-    private String accountHolder;
+    private final String accountHolder;
 
     public BankAccount(String accountHolder, BigDecimal balance) {
         this.accountHolder = accountHolder;
         this.accountBalance = balance;
+    }
+
+    boolean belongsTo(String customerName) {
+        return accountHolder.equals(customerName);
     }
 
     public boolean withdraw(BigDecimal amount) {
@@ -28,7 +32,4 @@ class BankAccount {
         this.accountBalance = accountBalance;
     }
 
-    public String getAccountHolder() {
-        return accountHolder;
-    }
 }

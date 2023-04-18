@@ -15,9 +15,10 @@ class PersonalAccountsManager {
     boolean withdraw(String customerName, BigDecimal cashAmount) {
         // new feature to start lookup by String bankManager too, but how? We're past branch now?
         return accounts.stream()
-                .filter(a -> a.getAccountHolder().equals(customerName))
+                .filter(a -> a.belongsTo(customerName))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("unknown customer " + customerName))
                 .withdraw(cashAmount);
     }
+
 }
