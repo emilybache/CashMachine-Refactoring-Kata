@@ -6,10 +6,9 @@ class CashMachine {
     private final BranchFinder branchFinder = new BranchFinder();
 
     public boolean withdraw(String town, String customerName, BigDecimal cashAmount) {
-        return branchFinder
-                .findBranchForTown(town)
-                .getPersonalAccounts()
-                .getAccountForCustomer(customerName)
-                .withdraw(cashAmount);
+        var branch = branchFinder.findBranchForTown(town);
+        var personalAccounts = branch.getPersonalAccounts();
+        var accountForCustomer = personalAccounts.getAccountForCustomer(customerName);
+        return accountForCustomer.withdraw(cashAmount);
     }
 }
