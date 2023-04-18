@@ -1,5 +1,7 @@
 package banking;
 
+import java.math.BigDecimal;
+
 class Branch {
     private final String name;
     private final String branchManager;
@@ -8,6 +10,12 @@ class Branch {
     public Branch(String name) {
         this.name = name;
         this.branchManager = "Mr Gringotts Goblin";
+    }
+
+    boolean extracted(String customerName, BigDecimal cashAmount) {
+        var personalAccounts = getPersonalAccounts();
+        var accountForCustomer = personalAccounts.getAccountForCustomer(customerName);
+        return accountForCustomer.withdraw(cashAmount);
     }
 
     public String getName() {
