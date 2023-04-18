@@ -12,7 +12,7 @@ class PersonalAccountsManager {
         accounts.add(new BankAccount("Arthur", BigDecimal.valueOf(800L)));
     }
 
-    public BankAccount getAccountForCustomer(String customerName /*, string bankManager */) {
+    public BankAccount getAccountForCustomer(String customerName /*, String bankManager */) {
         return accounts.stream()
                 .filter(a -> a.getAccountHolder().equals(customerName))
                 .findFirst()
