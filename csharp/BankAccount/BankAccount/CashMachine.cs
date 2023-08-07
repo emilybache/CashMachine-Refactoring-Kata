@@ -2,11 +2,11 @@ namespace Banking;
 
 public class CashMachine
 {
-    public BranchFinder BranchFinder { get; } = new BranchFinder();
+    public AccountAccess AccountAccess { get; } = new AccountAccess();
 
     public bool Withdraw(string town, string customerName, decimal cashAmount)
     {
-        return BranchFinder.Withdraw(town, customerName, cashAmount);
+        return AccountAccess.Withdraw(town, customerName, cashAmount);
     }
 }
 

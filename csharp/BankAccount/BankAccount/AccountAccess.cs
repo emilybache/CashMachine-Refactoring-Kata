@@ -1,6 +1,10 @@
 namespace Banking;
 
-public class BranchFinder
+/**
+ * This class has responsibility for helping you access functionality on individual bank accounts,
+ * without exposing the actual account object. 
+ */
+public class AccountAccess
 {
     public Branch FindBranchForTown(string town)
     {
