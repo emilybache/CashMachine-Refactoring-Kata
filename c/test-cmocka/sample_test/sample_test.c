@@ -12,7 +12,7 @@ static void test_withdraw(void **state)
     Cash* toWithdraw = Cash_create(100);
     Account* account = Account_create(1234, accountBalance);
     assert_true(withdraw_from_account(account, toWithdraw));
-first    assert_int_equal(4100, toWithdraw->cents);
+    assert_int_equal(4100, toWithdraw->cents);
 }
 
 int main(void) {
