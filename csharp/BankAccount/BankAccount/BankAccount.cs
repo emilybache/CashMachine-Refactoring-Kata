@@ -3,9 +3,9 @@ namespace Banking;
 public class BankAccount
 {
     public decimal AccountBalance { get; set; }
-    public string AccountHolder { get; }
+    public Customer AccountHolder { get; }
 
-    public BankAccount(string accountHolder, decimal balance)
+    public BankAccount(Customer accountHolder, decimal balance)
     {
         AccountHolder = accountHolder;
         AccountBalance = balance;
