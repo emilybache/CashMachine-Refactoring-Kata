@@ -11,6 +11,18 @@ class BankAccount {
         this.accountBalance = balance;
     }
 
+    public void setAccountBalance(BigDecimal accountBalance) {
+        this.accountBalance = accountBalance;
+    }
+
+    public BigDecimal getAccountBalance() {
+        return accountBalance;
+    }
+
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
     public boolean withdraw(BigDecimal amount) {
         if (amount.compareTo(BigDecimal.ZERO) > 0 && amount.compareTo(accountBalance) <= 0) {
             this.accountBalance = this.accountBalance.subtract(amount);
@@ -18,17 +30,5 @@ class BankAccount {
         }
 
         return false;
-    }
-
-    public BigDecimal getAccountBalance() {
-        return accountBalance;
-    }
-
-    public void setAccountBalance(BigDecimal accountBalance) {
-        this.accountBalance = accountBalance;
-    }
-
-    public String getAccountHolder() {
-        return accountHolder;
     }
 }
