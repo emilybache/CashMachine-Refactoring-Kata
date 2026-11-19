@@ -24,7 +24,7 @@ public class MagazineDeliveryService
     
     private void AddToPocket(decimal money)
     {
-        // logic to add money to own picket
+        // logic to add money to own pocket
     }
 }
 
